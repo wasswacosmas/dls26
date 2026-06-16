@@ -1,0 +1,68 @@
+query GetPlayerStats($playerId: ID!) {
+  player(id: $playerId) {
+    id
+    name
+    position
+    rating
+    team {
+      id
+      name
+      ranking
+    }
+    statistics {
+      matchesPlayed
+      goals
+      assists
+    }
+  }
+}
+
+query ListAllPlayers {
+  players {
+    id
+    name
+    position
+    rating
+  }
+}
+
+query GetTeamRankings {
+  teams(orderBy: RANKING) {
+    id
+    name
+    ranking
+    points
+    matchesPlayed
+  }
+}
+
+mutation UpdatePlayerRating($playerId: ID!, $newRating: Int!) {
+  updatePlayer(id: $playerId, rating: $newRating) {
+    id
+    name
+    rating
+    updatedAt
+  }
+}
+
+type Player {
+  id: ID!
+  name: String!
+  position: String!
+  rating: Int!
+  team: Team
+  statistics: PlayerStatistics
+}
+
+type Team {
+  id: ID!
+  name: String!
+  ranking: Int!
+  points: Int!
+}
+
+type PlayerStatistics {
+  matchesPlayed: Int!
+  goals: Int!
+  assists: Int!
+}
