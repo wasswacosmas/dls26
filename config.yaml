@@ -1,0 +1,49 @@
+# DLS26 Fan Website Configuration
+site:
+  name: DLS26 Fan Website
+  description: A comprehensive fan website for DLS26
+  version: 1.0.0
+  url: https://dls26.example.com
+
+server:
+  host: localhost
+  port: 8000
+  debug: true
+  workers: 4
+
+database:
+  type: sqlite
+  path: dls26.db
+
+features:
+  player_stats: true
+  match_history: true
+  team_rankings: true
+  user_comments: true
+  leaderboards: true
+
+api:
+  prefix: /api/v1
+  timeout: 30
+  rate_limit: 100
+
+social:
+  twitter: "@dls26"
+  facebook: "dls26"
+  instagram: "dls26"
+
+languages:
+  - HTML
+  - CSS
+  - Python
+  - JavaScript
+
+content:
+  players:
+    - name: "Player Name"
+      position: "Forward"
+      rating: 85
+  teams:
+    - name: "Team Name"
+      country: "Country"
+      ranking: 1
