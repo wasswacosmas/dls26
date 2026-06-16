@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dls26-config>
+    <application>
+        <name>DLS26 Fan Website</name>
+        <version>1.0.0</version>
+        <description>A comprehensive fan website for DLS26</description>
+    </application>
+    
+    <server>
+        <host>localhost</host>
+        <port>8000</port>
+        <ssl>false</ssl>
+    </server>
+    
+    <database>
+        <type>sqlite</type>
+        <path>dls26.db</path>
+        <backup>true</backup>
+    </database>
+    
+    <features>
+        <feature>
+            <name>Player Statistics</name>
+            <enabled>true</enabled>
+        </feature>
+        <feature>
+            <name>Match History</name>
+            <enabled>true</enabled>
+        </feature>
+        <feature>
+            <name>Team Rankings</name>
+            <enabled>true</enabled>
+        </feature>
+        <feature>
+            <name>User Comments</name>
+            <enabled>true</enabled>
+        </feature>
+    </features>
+    
+    <api>
+        <prefix>/api/v1</prefix>
+        <timeout>30</timeout>
+        <rateLimit>100</rateLimit>
+    </api>
+</dls26-config>
