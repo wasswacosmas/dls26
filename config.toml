@@ -1,0 +1,68 @@
+# DLS26 Project Configuration
+# TOML format for application settings
+
+[application]
+name = "DLS26 Fan Website"
+version = "1.0.0"
+description = "A comprehensive fan website for DLS26"
+author = "wasswacosmas"
+
+[server]
+host = "localhost"
+port = 8000
+workers = 4
+timeout = 30
+debug = true
+
+[database]
+type = "sqlite"
+path = "dls26.db"
+backup_enabled = true
+backup_interval = "daily"
+
+[features]
+player_stats = true
+match_history = true
+team_rankings = true
+user_comments = true
+leaderboards = true
+
+[api]
+version = "v1"
+prefix = "/api/v1"
+rate_limit = 100
+enable_cors = true
+
+[cache]
+enabled = true
+ttl = 3600
+backend = "memory"
+
+[logging]
+level = "INFO"
+format = "json"
+output = "logs/app.log"
+
+[security]
+enable_https = false
+session_timeout = 3600
+password_min_length = 8
+
+[languages]
+supported = ["en", "es", "fr", "de"]
+default = "en"
+
+[[social_media]]
+platform = "twitter"
+handle = "@dls26"
+enabled = true
+
+[[social_media]]
+platform = "facebook"
+handle = "dls26"
+enabled = true
+
+[[social_media]]
+platform = "instagram"
+handle = "dls26"
+enabled = true
